@@ -1,10 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:nutrimeter_app/signup_3.dart';
 import 'constants.dart';
+
+class HomePage2 extends StatefulWidget {
+  const HomePage2({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage2> createState() => _HomePage2State();
+}
+
+class _HomePage2State extends State<HomePage2> {
+  //Initialize Firebase App
+  /*Future<FirebaseApp> _initializeFirebase() async{
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+*/
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(backgroundColor: Colors.black, body: SignupPage2());
+  }
+}
+
+class SignupPage2 extends StatefulWidget {
+  const SignupPage2({Key? key}) : super(key: key);
+
+  @override
+  State<SignupPage2> createState() => _SignupPage2State();
+}
 
 enum Gender { Male, Female }
 
-class SignupScreen2 extends StatelessWidget {
-  const SignupScreen2({Key? key}) : super(key: key);
+class _SignupPage2State extends State<SignupPage2> {
   Gender? _gender = Gender.Male;
 
   @override
@@ -86,8 +115,8 @@ class SignupScreen2 extends StatelessWidget {
             keyboardType: TextInputType.datetime,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
-              hintText: 'Birthdate',
+              fillColor: Color.fromARGB(255, 0, 0, 0),
+              hintText: 'Birthdate (D/M/Y)',
             ),
           ),
 
@@ -99,8 +128,8 @@ class SignupScreen2 extends StatelessWidget {
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
-              hintText: 'Weight',
+              fillColor: Color.fromARGB(255, 0, 0, 0),
+              hintText: 'Weight in Kg',
             ),
           ),
 
@@ -112,8 +141,8 @@ class SignupScreen2 extends StatelessWidget {
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
-              hintText: 'Target weight',
+              fillColor: Color.fromARGB(255, 0, 0, 0),
+              hintText: 'Target weight in Kg',
             ),
           ),
 
@@ -125,8 +154,8 @@ class SignupScreen2 extends StatelessWidget {
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
-              hintText: 'Height',
+              fillColor: Color.fromARGB(255, 0, 0, 0),
+              hintText: 'Height in cm',
             ),
           ),
 
@@ -157,18 +186,21 @@ class SignupScreen2 extends StatelessWidget {
           ),
 
           Container(
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              shape: BoxShape.circle,
+            ),
+            child: ElevatedButton(
+              child: const Text('Next'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage3(),
                   ),
-                  const Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                  )
-                ]),
+                );
+              },
+            ),
           ),
         ],
       ),

@@ -2,6 +2,9 @@ import 'package:nutrimeter_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:nutrimeter_app/signin.dart';
 import 'package:nutrimeter_app/signup_1.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:nutrimeter_app/ui/export.dart';
+import 'package:nutrimeter_app/ui/ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -96,7 +99,7 @@ class WelcomeScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                          return SignupScreen1();
+                          return HomePage();
                         },
                       ));
                     },

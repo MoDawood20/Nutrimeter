@@ -1,10 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:nutrimeter_app/signup_2.dart';
 import 'constants.dart';
 
-class SignupScreen1 extends StatelessWidget {
-  const SignupScreen1({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  //Initialize Firebase App
+  Future<FirebaseApp> _initializeFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: FutureBuilder(
+            future: _initializeFirebase(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return SignupPage1();
+              }
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }));
+  }
+}
+
+class SignupPage1 extends StatefulWidget {
+  const SignupPage1({Key? key}) : super(key: key);
+
+  @override
+  State<SignupPage1> createState() => _SignupPage1State();
+}
+
+class _SignupPage1State extends State<SignupPage1> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +61,7 @@ class SignupScreen1 extends StatelessWidget {
             ),
           ),
           const Text(
-            '  Sign up to get started',
+            '  Sign up to ger started',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
@@ -38,7 +75,7 @@ class SignupScreen1 extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Color.fromARGB(255, 0, 0, 0),
               hintText: 'Email',
             ),
           ),
@@ -49,7 +86,7 @@ class SignupScreen1 extends StatelessWidget {
             keyboardType: TextInputType.name,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Color.fromARGB(255, 0, 0, 0),
               hintText: 'First name',
             ),
           ),
@@ -60,7 +97,7 @@ class SignupScreen1 extends StatelessWidget {
             keyboardType: TextInputType.name,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Color.fromARGB(255, 0, 0, 0),
               hintText: 'Last name',
             ),
           ),
@@ -71,7 +108,7 @@ class SignupScreen1 extends StatelessWidget {
             keyboardType: TextInputType.visiblePassword,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Color.fromARGB(255, 0, 0, 0),
               hintText: 'Password',
             ),
           ),
@@ -82,7 +119,7 @@ class SignupScreen1 extends StatelessWidget {
             keyboardType: TextInputType.visiblePassword,
             decoration: const InputDecoration(
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Color.fromARGB(255, 0, 0, 0),
               hintText: 'Confirm password',
             ),
           ),
@@ -120,7 +157,8 @@ class SignupScreen1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const SignupScreen2()),
+                    builder: (context) => HomePage2(),
+                  ),
                 );
               },
             ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:nutrimeter_app/recipes.dart';
+import 'package:nutrimeter_app/settingscreen.dart';
 import 'constants.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -80,23 +83,21 @@ class SignInScreen extends StatelessWidget {
 
               //button
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
-                  padding: EdgeInsets.all(18),
-                  decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(25)),
-                  child: Center(
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  shape: BoxShape.circle,
+                ),
+                child: ElevatedButton(
+                  child: const Text('Sign In'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Settingsscreen2(),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ),
               SizedBox(height: 15),

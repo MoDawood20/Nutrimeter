@@ -1,10 +1,38 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:nutrimeter_app/signin.dart';
+
+class HomePage3 extends StatefulWidget {
+  const HomePage3({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage3> createState() => _HomePage3State();
+}
+
+class _HomePage3State extends State<HomePage3> {
+  //Initialize Firebase App
+  /*Future<FirebaseApp> _initializeFirebase() async{
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+*/
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(backgroundColor: Colors.black, body: SignupPage2());
+  }
+}
+
+class SignupPage2 extends StatefulWidget {
+  const SignupPage2({Key? key}) : super(key: key);
+
+  @override
+  State<SignupPage2> createState() => _SignupPage2State();
+}
 
 enum B { yes, no }
 
-class SignupPage3 extends StatelessWidget {
-  const SignupPage3({Key? key}) : super(key: key);
+class _SignupPage2State extends State<SignupPage2> {
   B? _gender = B.no;
 
   @override
@@ -241,18 +269,21 @@ class SignupPage3 extends StatelessWidget {
             height: 10,
           ),
           Container(
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              shape: BoxShape.circle,
+            ),
+            child: ElevatedButton(
+              child: const Text('Register'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignInScreen(),
                   ),
-                  const Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                  )
-                ]),
+                );
+              },
+            ),
           ),
         ],
       ),
