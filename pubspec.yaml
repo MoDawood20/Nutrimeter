@@ -1,0 +1,44 @@
+name: nutrimeter_app
+description: A new Flutter project.
+
+
+#publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  firebase_auth: ^3.3.20
+  cloud_firestore: ^3.1.18
+
+flutter:
+  uses-material-design: true
+
+
+  assets:
+    - assets/welcome.jpeg
+    - assets/wave.jpeg
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+
+flutter_icons:
+  image_path: "assets/logo.jpeg"
+  android: true
+  ios: true
+
+
+#fonts:
+ # - family: grotesco
+  #    fonts:
+   #     - asset: assets/Fontspring-DEMO-grotesco-black.otf
