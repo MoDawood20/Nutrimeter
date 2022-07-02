@@ -121,7 +121,12 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                         ],
                       ),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Emptystatescreen1()));
+                        },
                         child: Image.asset(
                             "assets/Singlelineitem_ImageButton_12-360x56.png"),
                       ),
@@ -145,7 +150,12 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                         ],
                       ),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Emptystatescreen1()));
+                        },
                         child: Image.asset(
                             "assets/Singlelineitem_ImageButton_13-360x56.png"),
                       ),
@@ -266,7 +276,7 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                             ),
 // Component Switch_Container_19
                             Container(
-                              width: 40,
+                              width: 120,
                               height: 40,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(0),
@@ -314,7 +324,12 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                         ],
                       ),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Emptystatescreen1()));
+                        },
                         child: Image.asset(
                             "assets/Singlelineitem_ImageButton_22-360x56.png"),
                       ),
@@ -338,7 +353,12 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                         ],
                       ),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Emptystatescreen1()));
+                        },
                         child: Image.asset(
                             "assets/Singlelineitem_ImageButton_23-360x56.png"),
                       ),
@@ -362,7 +382,12 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                         ],
                       ),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Emptystatescreen1()));
+                        },
                         child: Image.asset(
                             "assets/Singlelineitem_ImageButton_24-360x56.png"),
                       ),
@@ -454,7 +479,12 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                         ],
                       ),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Emptystatescreen1()));
+                        },
                         child: Image.asset(
                             "assets/Singlelineitem_ImageButton_28-360x56.png"),
                       ),
@@ -494,7 +524,7 @@ class _Settingsscreen2State extends State<Settingsscreen2> {
                             ),
 // Component Label_TextView_31
                             const Text(
-                              "Visit www.ui-kit.co",
+                              "Thank you for supporting us",
                               overflow: TextOverflow.visible,
                               textAlign: TextAlign.left,
                               style: TextStyle(

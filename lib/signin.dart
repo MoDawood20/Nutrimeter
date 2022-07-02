@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:nutrimeter_app/emptystatescreen1.dart';
+import 'package:nutrimeter_app/homepage.dart';
 import 'package:nutrimeter_app/recipes.dart';
 import 'package:nutrimeter_app/settingscreen.dart';
 import 'constants.dart';
@@ -94,7 +96,9 @@ class SignInScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Settingsscreen2(),
+                        builder: (context) => MyHomePage(
+                          title: 'Home',
+                        ),
                       ),
                     );
                   },
