@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nutrimeter_app/settingscreen.dart';
+import 'package:nutrimeter_app/ui/export.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -13,6 +15,14 @@ class _MyHomePageState extends State<MyHomePage> {
   final controller = TextEditingController();
   TextEditingController eCrl = new TextEditingController();
   String value = "";
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             margin: EdgeInsets.fromLTRB(30, 2, 25, 2),
             padding: EdgeInsets.all(5),
-            child: Text('Hello',
+            child: Text('Hello Mohamed Dawood ',
                 style: TextStyle(color: Colors.white, fontSize: 40)),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(30, 20, 25, 2),
+            margin: EdgeInsets.fromLTRB(30, 5, 25, 2),
             padding: EdgeInsets.only(left: 5),
             child: Text('Target Calories',
                 style: TextStyle(color: Colors.white, fontSize: 20)),
@@ -94,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: 350,
             height: 40,
             padding: EdgeInsets.all(5),
-            margin: const EdgeInsets.fromLTRB(16, 20, 16, 2),
+            margin: const EdgeInsets.fromLTRB(16, 5, 16, 2),
             child: Text('Recently opened Recipes',
                 style: TextStyle(color: Colors.white, fontSize: 20)),
           ),
@@ -135,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: 50,
                   width: 50,
                 ),
-                Text(' Alfredo Pasta',
+                Text('  Alfredo Pasta',
                     style: TextStyle(color: Colors.white, fontSize: 20)),
               ],
             ),
@@ -162,32 +172,43 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            width: 350,
-            height: 30,
-            padding: EdgeInsets.all(30),
-            margin: const EdgeInsets.fromLTRB(16, 20, 16, 2),
+            margin: const EdgeInsets.fromLTRB(16, 40, 16, 2),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                const Icon(
-                  Icons.home,
-                  color: Colors.white,
-                ),
-                const Icon(
-                  Icons.add,
-                  color: Colors.white,
-                ),
-                const Icon(
-                  Icons.note,
-                  color: Colors.white,
-                )
-              ],
-            ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.person),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Settingsscreen2(),
+                        ),
+                      );
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.camera_alt_outlined),
+                    color: Colors.white,
+                    onPressed: () {},
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.list_alt_outlined),
+                    color: Colors.white,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Recipesscreen5(),
+                        ),
+                      );
+                    },
+                  ),
+                ]),
           ),
         ],
       ),
-
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
