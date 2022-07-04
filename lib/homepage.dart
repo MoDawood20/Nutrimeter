@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:nutrimeter_app/camera.dart';
 import 'package:nutrimeter_app/settingscreen.dart';
 import 'package:nutrimeter_app/ui/export.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:camera/camera.dart';
+import 'package:flutter/material.dart';
+import 'package:http_parser/http_parser.dart';
+import 'package:http/http.dart' as http;
+import 'package:path/path.dart';
+import 'main.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -191,7 +202,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   IconButton(
                     icon: const Icon(Icons.camera_alt_outlined),
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TakePictureScreen(
+                            camera: firstCamera,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   IconButton(
                     icon: const Icon(Icons.list_alt_outlined),
