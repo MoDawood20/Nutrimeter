@@ -41,7 +41,7 @@ class _SignupPage2State extends State<SignupPage2> {
     return Padding(
       padding: const EdgeInsets.only(
         left: 20,
-        top: 100,
+        top: 50,
         right: 20,
       ),
       child: Column(
@@ -108,7 +108,7 @@ class _SignupPage2State extends State<SignupPage2> {
           ),
 
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
 
           const TextField(

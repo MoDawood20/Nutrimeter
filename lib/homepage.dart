@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Container(
             width: 350,
-            height: 40,
+            height: 20,
             padding: EdgeInsets.all(5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,13 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(30, 2, 25, 2),
+            margin: EdgeInsets.fromLTRB(10, 2, 25, 2),
             padding: EdgeInsets.all(5),
             child: Text('Hello Mohamed Dawood ',
                 style: TextStyle(color: Colors.white, fontSize: 40)),
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(30, 5, 25, 2),
+            margin: EdgeInsets.fromLTRB(10, 5, 25, 2),
             padding: EdgeInsets.only(left: 5),
             child: Text('Target Calories',
                 style: TextStyle(color: Colors.white, fontSize: 20)),

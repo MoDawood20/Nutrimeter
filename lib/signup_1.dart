@@ -47,7 +47,7 @@ class _SignupPage1State extends State<SignupPage1> {
     return Padding(
         padding: const EdgeInsets.only(
           left: 20,
-          top: 100,
+          top: 50,
           right: 20,
         ),
         child: Column(children: [
@@ -61,7 +61,7 @@ class _SignupPage1State extends State<SignupPage1> {
             ),
           ),
           const Text(
-            '  Sign up to ger started',
+            '  Sign up to get started',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
@@ -69,7 +69,7 @@ class _SignupPage1State extends State<SignupPage1> {
             ),
           ),
           const SizedBox(
-            height: 44,
+            height: 5,
           ),
           const TextField(
             keyboardType: TextInputType.emailAddress,
@@ -80,7 +80,7 @@ class _SignupPage1State extends State<SignupPage1> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 5,
           ),
           const TextField(
             keyboardType: TextInputType.name,

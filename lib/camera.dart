@@ -129,7 +129,7 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
             ElevatedButton(
               onPressed: () async {
                 var instance = await uploadFile(widget.imagePath);
-                // print(instance!);
+                print(instance!);
                 openDialog(instance as String);
               },
               child: const Text('Predict food nutrition'),
@@ -156,7 +156,11 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
         print(json.isEmpty);
         return "No instances detected";
       } else {
-        return json.keys.toList()[0][17];
+        var cals;
+        for (var cal in json.keys.toList()) {
+          cals = json[cal][12]['amount'].toString();
+        }
+        return cals;
       }
     } else {
       print(response.reasonPhrase);
@@ -168,7 +172,7 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
   Future openDialog(String cal) => showDialog(
         context: this.context,
         builder: (context) => AlertDialog(
-          title: const Text('Instances'),
+          title: const Text('Calories'),
           content: Text(cal),
           actions: [
             TextButton(
